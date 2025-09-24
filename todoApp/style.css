@@ -1,0 +1,36 @@
+body{
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+}
+.container{
+  background: #e6dada;
+  padding: 20px;
+  border-radius: 10px;
+}
+h1{
+  text-align: center;
+  color:#333;
+}
+.input-section{
+  display: flex;
+
+  margin-bottom: 20px;
+}
+.input-section input{
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.input-section button{
+   padding: 10px 20px;
+  background: blue;
+  color:white;
+  border: none;
+  border-radius: 5px;
+   margin-left: 10px;
+}
+button:hover{
+  background:#210a7b ;
+}
