@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body{
+        background: black;
+      }
+      .container {
+        text-align: center;
+        max-width: 250px;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 50px auto;
+        background: #564bac;
+      }
+      input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px;
+        border-radius:5px ;
+        font-size: large;
+        background: #f3efef;
+      }
+      .btn-container {
+        width: 90%;
+        padding: 10px;
+      }
+      button {
+        padding: 5px;
+        width: 40px;
+        margin: 5px;
+        font-size: large;
+        background: rgb(76, 193, 156);
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input id="result" type="text" placeholder="0" readonly />
+
+      <div class="btn-container">
+        <button id="btn" onClick="clean()">C</button>
+        <button id="btn" onClick="del()">Del</button>
+        <button id="btn" onClick="append('/')">/</button>
+        <button id="btn" onClick="append('x')">x</button>
+
+        <button id="btn" onClick="append('7')">7</button>
+        <button id="btn" onClick="append('8')">8</button>
+        <button id="btn" onClick="append('9')">9</button>
+        <button id="btn" onClick="append('+')">+</button>
+
+        <button id="btn" onClick="append('4')">4</button>
+        <button id="btn" onClick="append('5')">5</button>
+        <button id="btn" onClick="append('6')">6</button>
+        <button id="btn" onClick="append('-')">-</button>
+
+        <button id="btn" onClick="append('1')">1</button>
+        <button id="btn" onClick="append('2')">2</button>
+        <button id="btn" onClick="append('3')">3</button>
+        <button id="btn" onClick="calculate()">=</button>
+
+        <button id="btn" onClick="append('0')">0</button>
+        <button id="btn" onClick="append('.')">.</button>
+      </div>
+    </div>
+
+    <script>
+      
+
+     
+      function append(value){
+        document.getElementById('result').value+=value;
+      }
+
+      function calculate(){
+        try{
+        document.getElementById('result').value= eval(document.getElementById('result').value)
+      }
+      catch{
+        document.getElementById('result').value="Error";
+      }
+      }
+       function clean(){
+        document.getElementById("result").value=" ";
+      }
+      function del(){
+        let current=document.getElementById('result').value;
+        document.getElementById('result').value=current.slice(0,-1);
+      }
+    </script>
+  </body>
 </html>
