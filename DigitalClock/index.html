@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <style>
+    .container{
+      text-align: center;
+      background: black;
+      color: white;
+      padding: 20px;
+      width: 400px;
+      height: 300px;
+    }
+    .time{
+      font-size: 50px;
+
+    }
+    .date{
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>Clock</h1>
+  <p class="time"></p>
+  <p class="date"></p>
+  </div>
+  
+
+  <script>
+    function updateTime(){
+    const date= new Date();
+  document.querySelector('.time').innerHTML=date.toLocaleTimeString();
+
+  const options ={weekday: 'long', day:'numeric', month:'short'};
+  formattedDate=date.toLocaleDateString('en-US', options)
+  document.querySelector('.date').innerHTML=formattedDate;
+    
+    }
+  setInterval(updateTime, 1000);
+
+  </script>
+</body>
+</html>
