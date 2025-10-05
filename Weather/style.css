@@ -1,0 +1,37 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 500px;
+  height: 600px;
+  background: rgb(66, 112, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row{
+  width: 400px;
+ margin: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+  font-size: 40px;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#search{
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px  5px gray;
+  
+}
