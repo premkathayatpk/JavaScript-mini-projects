@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="row"  >
-      <input type="text" id="search" placeholder=" Search by City ">
-    </div>
-     <div class="row" id="weather">
-      <div>
-        <img src="weather.png" alt="Weather" height="80px" >
-        <br>
-        <br>
-        <br>
-      </div>
-      
-      <div>
-       
-        <h2>32 °C</h2>
-      
-        <h2>Clear</h2>
-      </div>
-    </div>
-  </div>
+    <div class="container">
+        <h1>Weather App</h1>
+        
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn">Search</button>
+            <button id="location-btn">Use My Location</button>
+        </div>
 
-  <script src="app.js"></script>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div id="weather-container" class="hidden">
+            <div class="current-weather">
+                <h2 id="city-name"></h2>
+                <div class="weather-main">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <div class="temperature">
+                        <span id="temp"></span>
+                        <span id="description"></span>
+                    </div>
+                </div>
+                <div class="weather-details">
+                   
+                    <div class="detail">
+                        <span>Humidity</span>
+                        <span id="humidity"></span>
+                    </div>
+                    
+                </div>
+            </div>
+
+           
+        </div>
+
+        <div id="error" class="error hidden">
+            <p>Could not fetch weather data. Please try again.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
